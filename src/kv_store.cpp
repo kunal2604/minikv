@@ -1,5 +1,5 @@
 #include "kv_store.h"
-#include<utility>
+#include <utility>
 
 void KVStore::set(std::string key, std::string value)
 {
@@ -23,4 +23,9 @@ std::size_t KVStore::size() const
 
 {
     return data_.size();
+}
+
+bool KVStore::exists(const std::string& key) const
+{
+    return data_.contains(key); // c++ 20
 }
